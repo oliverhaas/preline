@@ -1152,7 +1152,7 @@ class HSSelect extends HSBasePlugin<ISelectOptions> implements ISelect {
 		}
 	}
 
-	static closeCurrentlyOpened(evtTarget: HTMLElement | null = null) {
+	static closeCurrentlyOpened(evttarget?: HTMLElement) {
 		if (!evtTarget.closest('.hs-select.active')) {
 			const currentlyOpened =
 				window.$hsSelectCollection.filter((el) => el.element.isOpened) || null;
