@@ -378,7 +378,7 @@ class HSOverlay extends HSBasePlugin<{}> implements IOverlay {
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsOverlayCollection) {
             window.$hsOverlayCollection = [];
             document.addEventListener('keydown', (evt) =>
@@ -386,7 +386,7 @@ class HSOverlay extends HSBasePlugin<{}> implements IOverlay {
 			);
         }
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-overlay]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

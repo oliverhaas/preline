@@ -101,7 +101,7 @@ class HSThemeSwitch
 		return elInCollection ? elInCollection.element : null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsThemeSwitchCollection) window.$hsThemeSwitchCollection = [];
 
 		const toggleObserveSystemTheme = (el: HSThemeSwitch) => {
@@ -110,7 +110,7 @@ class HSThemeSwitch
 			else el.removeSystemThemeObserver();
 		};
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-theme-switch]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (
@@ -135,7 +135,7 @@ class HSThemeSwitch
 				}
 			});
 
-            (target || document)
+		document
 			.querySelectorAll(
 				'[data-hs-theme-click-value]:not(.--prevent-on-load-init)',
 			)

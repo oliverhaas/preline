@@ -297,10 +297,10 @@ class HSCarousel extends HSBasePlugin<ICarouselOptions> implements ICarousel {
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsCarouselCollection) window.$hsCarouselCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-carousel]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

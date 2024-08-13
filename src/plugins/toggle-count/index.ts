@@ -104,10 +104,10 @@ class HSToggleCount
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsToggleCountCollection) window.$hsToggleCountCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-toggle-count]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

@@ -179,11 +179,11 @@ class HSSearchByJson
 		return elInCollection ? elInCollection.element : null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsSearchByJsonCollection)
 			window.$hsSearchByJsonCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-search-by-json]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLInputElement) => {
 				if (

@@ -160,11 +160,11 @@ class HSTogglePassword
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsTogglePasswordCollection)
 			window.$hsTogglePasswordCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll(
 				'[data-hs-toggle-password]:not(.--prevent-on-load-init)',
 			)

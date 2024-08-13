@@ -253,10 +253,10 @@ class HSInputNumber
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsInputNumberCollection) window.$hsInputNumberCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-input-number]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

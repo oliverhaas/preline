@@ -161,10 +161,10 @@ class HSScrollspy extends HSBasePlugin<{}> implements IScrollspy {
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsScrollspyCollection) window.$hsScrollspyCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-scrollspy]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

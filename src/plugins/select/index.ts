@@ -1099,7 +1099,7 @@ class HSSelect extends HSBasePlugin<ISelectOptions> implements ISelect {
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsSelectCollection) {
             window.$hsSelectCollection = [];
             window.addEventListener('click', (evt) => {
@@ -1113,7 +1113,7 @@ class HSSelect extends HSBasePlugin<ISelectOptions> implements ISelect {
 			);
         }
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-select]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

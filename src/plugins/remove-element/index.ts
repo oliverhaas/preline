@@ -56,11 +56,11 @@ class HSRemoveElement
 	}
 
 	// Static method
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsRemoveElementCollection)
 			window.$hsRemoveElementCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-remove-element]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

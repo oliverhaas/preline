@@ -286,7 +286,7 @@ class HSDropdown
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsDropdownCollection) {
             window.$hsDropdownCollection = [];
             document.addEventListener('keydown', (evt) =>
@@ -308,8 +308,8 @@ class HSDropdown
 			});
         }
 
-		(target || document)
-			.querySelectorAll('.hs-dropdown:not(.--prevent-on-load-init)')
+		document
+            .querySelectorAll('.hs-dropdown:not(.--prevent-on-load-init)')
 			.forEach((el: IHTMLElementPopper) => {
 				if (
 					!window.$hsDropdownCollection.find(

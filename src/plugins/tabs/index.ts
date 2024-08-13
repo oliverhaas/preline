@@ -108,13 +108,13 @@ class HSTabs extends HSBasePlugin<{}> implements ITabs {
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsTabsCollection) {
             window.$hsTabsCollection = [];
             document.addEventListener('keydown', (evt) => HSTabs.accessibility(evt));
         }
 
-		(target || document)
+		document
 			.querySelectorAll(
 				'[role="tablist"]:not(select):not(.--prevent-on-load-init)',
 			)

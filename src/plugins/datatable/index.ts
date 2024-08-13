@@ -411,10 +411,10 @@ class HSDataTable
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsDataTableCollection) window.$hsDataTableCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-datatable]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

@@ -848,7 +848,7 @@ class HSComboBox extends HSBasePlugin<IComboBoxOptions> implements IComboBox {
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsComboBoxCollection) {
             window.$hsComboBoxCollection = [];
             window.addEventListener('click', (evt) => {
@@ -862,7 +862,7 @@ class HSComboBox extends HSBasePlugin<IComboBoxOptions> implements IComboBox {
 			);
         }
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-combo-box]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

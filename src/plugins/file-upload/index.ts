@@ -333,10 +333,10 @@ class HSFileUpload
 			: null;
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsFileUploadCollection) window.$hsFileUploadCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll('[data-hs-file-upload]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (

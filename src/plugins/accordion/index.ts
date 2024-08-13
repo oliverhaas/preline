@@ -155,10 +155,10 @@ class HSAccordion
 			elInCollection.element.hide();
 	}
 
-	static autoInit(target: HTMLElement | null = null) {
+	static autoInit() {
 		if (!window.$hsAccordionCollection) window.$hsAccordionCollection = [];
 
-		(target || document)
+		document
 			.querySelectorAll('.hs-accordion:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (
