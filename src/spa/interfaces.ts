@@ -1,7 +1,7 @@
 export interface ISpaCollectionItem {
 	key: string;
 	fn: {
-		autoInit: (target: HTMLElement | null = null) => void;
+		autoInit: (target: HTMLElement | null) => void;
 	};
 	collection: string;
 }
