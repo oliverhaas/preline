@@ -1099,10 +1099,21 @@ class HSSelect extends HSBasePlugin<ISelectOptions> implements ISelect {
 			: null;
 	}
 
-	static autoInit() {
-		if (!window.$hsSelectCollection) window.$hsSelectCollection = [];
+	static autoInit(target: HTMLElement | null = null) {
+		if (!window.$hsSelectCollection) {
+            window.$hsSelectCollection = [];
+            window.addEventListener('click', (evt) => {
+				const evtTarget = evt.target;
 
-		document
+				HSSelect.closeCurrentlyOpened(evtTarget as HTMLElement);
+			});
+
+			document.addEventListener('keydown', (evt) =>
+				HSSelect.accessibility(evt),
+			);
+        }
+
+		(target || document)
 			.querySelectorAll('[data-hs-select]:not(.--prevent-on-load-init)')
 			.forEach((el: HTMLElement) => {
 				if (
@@ -1116,18 +1127,6 @@ class HSSelect extends HSBasePlugin<ISelectOptions> implements ISelect {
 					new HSSelect(el, options);
 				}
 			});
-
-		if (window.$hsSelectCollection) {
-			window.addEventListener('click', (evt) => {
-				const evtTarget = evt.target;
-
-				HSSelect.closeCurrentlyOpened(evtTarget as HTMLElement);
-			});
-
-			document.addEventListener('keydown', (evt) =>
-				HSSelect.accessibility(evt),
-			);
-		}
 	}
 
 	static open(target: HTMLElement | string) {
